@@ -23,6 +23,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-last-modified-at
 
 # Theme-specific settings
 
@@ -72,3 +73,25 @@ minima:
   #  - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
 
 
+collections:
+  notes:
+    output: true
+    permalink: /:slug
+    
+
+permalink:           pretty
+relative_permalinks: false
+
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+  
+defaults:
+  - scope:
+      path: "**/*"
+    values:
+      layout: "default"
+  - scope:
+      path: "_notes/**/*.md"
+    values:
+      layout: "note"
